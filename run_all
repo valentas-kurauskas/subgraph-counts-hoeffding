@@ -2,7 +2,7 @@
 
 #Save and process degree distributions from
 #A. D. Broido and A. Clauset, Scale-free networks are rare, Nature Communications 10 (2019), 1–10.
-#git clone https://github.com/adbroido/SFAnalysis
+git clone https://github.com/adbroido/SFAnalysis
 python3 estimate_N.py --h=3 `ls ./SFAnalysis/degreesequences/*.txt | grep -v -e "directedin\|directedout"` > results/broido_clauset_3.txt
 python3 estimate_N.py --h=4 `ls ./SFAnalysis/degreesequences/*.txt | grep -v -e "directedin\|directedout"` > results/broido_clauset_4.txt
 python3 estimate_N.py --h=5 `ls ./SFAnalysis/degreesequences/*.txt | grep -v -e "directedin\|directedout"` > results/broido_clauset_5.txt
@@ -10,10 +10,10 @@ python3 estimate_N.py --h=5 `ls ./SFAnalysis/degreesequences/*.txt | grep -v -e 
 
 #Save degree information from 
 #D. M. Feehan and A. S. Mahmud, Quantifying population contact patterns in the United States during the COVID-19 pandemic, Nature Communications 12 (2021), 1–9. 
-#git clone https://github.com/dfeehan/bics-paper-release.git
-#cd ./bics-paper-release/bics-paper-code/code/
-#R -e "install.packages('piggyback', 'data.table')"
-#Rscript bics-paper-release/bics-paper-code/code/00-run-all.R || true
+git clone https://github.com/dfeehan/bics-paper-release.git
+cd ./bics-paper-release/bics-paper-code/code/
+R -e "install.packages('piggyback', 'data.table')"
+Rscript bics-paper-release/bics-paper-code/code/00-run-all.R || true
 Rscript bics_save_waves.R
 #(you actually need the download part to work)
 #wave 0 is excluded because the surveys had a cut off at degree 10
