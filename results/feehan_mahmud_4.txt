@@ -1,0 +1,7 @@
+n = 330000000 N = 29815734 E D^3 = 2797.8 max degree = 104 Delta = 105 practical COVID19-Wave1_adjusted.csv
+n = 330000000 N = 21739541 E D^3 = 3276.5 max degree = 104 Delta = 105 practical COVID19-Wave1.csv
+n = 330000000 N = 14534436 E D^3 = 3670.3 max degree = 101 Delta = 102 practical COVID19-Wave2_adjusted.csv
+n = 330000000 N = 6411580 E D^3 = 5526.0 max degree = 101 Delta = 102 practical COVID19-Wave2.csv
+n = 330000000 N = 1790358 E D^3 = 10771.2 max degree = 104 Delta = 103 practical COVID19-Wave3_adjusted.csv
+n = 330000000 N = 1943418 E D^3 = 10338.3 max degree = 104 Delta = 103 practical COVID19-Wave3.csv
+h=4 n_practical=6 n_total=6 ratio=1.0
