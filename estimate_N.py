@@ -35,20 +35,21 @@ for filename in filenames:
     df = df.sort_values("degree", ascending=False).reset_index(drop=True)
     S = (df.degree**(args.h-1) * df.freq).cumsum() / df.freq.sum()
 
+    ED_h_minus_one = S.values[-1]
+
     #find minimum \Delta such that the empirical distribution of the degree \tilde{D}
     #satisfies \E \tilde{D}^{h-1} \mathbb{I}_{\tilde{D} \ge \Delta} < \epsilon \E \tilde{D}^{h-1}
-    Delta = df.degree.values[np.where(S.values > args.epsilon * S.values[-1])[0][0]] + 1
+    Delta = df.degree.values[np.where(S.values > args.epsilon * ED_h_minus_one)[0][0]] + 1
 
-    EDhm1 = S.values[-1]
     #use \lambda = \epsilon \E \tilde{D}^{h-1}
-    lambd = args.epsilon * EDhm1 / args.i_T
-    s = args.epsilon * EDhm1
+    lambd = args.epsilon * ED_h_minus_one / args.i_T
+    s = args.epsilon * ED_h_minus_one
 
     N_hoeffding = max(1,int(math.ceil(0.5 * math.exp(2 * (args.h-1) * math.log(Delta-1) - 2 * math.log(s)) * math.log(2/args.p))))
     if N_hoeffding <  n:
         n_practical += 1
     n_total += 1
-    print(f"n = {n} N = {N_hoeffding} E D^{args.h-1} = {round(EDhm1,1)} max degree = {max(df.degree)} Delta = {Delta} {'practical' if N_hoeffding <  n else 'useless'} {filename}")
+    print(f"n = {n} N = {N_hoeffding} E D^{args.h-1} = {round(ED_h_minus_one,1)} max degree = {max(df.degree)} Delta = {Delta} {'practical' if N_hoeffding <  n else 'useless'} {filename}")
 
 #Totals are printed in the end
 print(f"h={args.h} n_practical={n_practical} n_total={n_total} ratio={None if n_total==0 else round(n_practical/n_total,2)}")
