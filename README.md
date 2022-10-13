@@ -1,4 +1,4 @@
-This repository contains experiments from our paper "A note on estimating global subgraph counts by sampling".
+This repository contains experiments from our paper *A note on estimating global subgraph counts by sampling*.
 
 The included script calculates the minimum sample size $N$ as in our Corollary 5 with $\epsilon=0.1$ and $p=0.05$.
 
