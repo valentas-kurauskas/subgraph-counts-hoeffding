@@ -2,7 +2,7 @@
 
 This repository contains experiments from our paper *A note on estimating global subgraph counts by sampling*.
 
-The included script calculates the minimum sample size $N$ as in our Corollary 5 with $\epsilon=0.1$ and $p=0.05$.
+The included script calculates the minimum sample size $N$ as in our Corollary 5 with $\epsilon=0.1$ and $p=0.05$ (and also one result for Theorem 6), see the script `run_all`.
 
 To choose $\Delta$ in (3.3), we take the minimum such value that $\mathbb{E} \tilde{D}^{h-1} \mathbf{1}_{\tilde{D} \ge \Delta} \le \epsilon \mathbb{E} \tilde{D}^{h-1}$, where the random variable $\tilde{D}$ follows the empirical degree distribution. We assume that (3.3) holds with this $\Delta$ and $\lambda = \epsilon \mathbb{E} \tilde{D}^{h-1}$.
 
