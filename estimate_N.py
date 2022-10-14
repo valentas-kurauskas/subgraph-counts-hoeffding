@@ -12,6 +12,7 @@ parser.add_argument("--epsilon", type=float, help="precision required (fraction 
 parser.add_argument("--p", type=float, help="1-p is the confidence required", default=0.05)
 parser.add_argument("--n_vertices", type=int, help="number of vertices in G", default=0)
 parser.add_argument("--min_n", type=int, help="number of vertices in G", default=10000)
+parser.add_argument("--O_size", type=int, help="number of vertices in O (Theorem 6)", default=1)
 
 args,filenames = parser.parse_known_args() 
 
@@ -45,7 +46,7 @@ for filename in filenames:
     lambd = args.epsilon * ED_h_minus_one / args.i_T
     s = args.epsilon * ED_h_minus_one
 
-    N_hoeffding = max(1,int(math.ceil(0.5 * math.exp(2 * (args.h-1) * math.log(Delta-1) - 2 * math.log(s)) * math.log(2/args.p))))
+    N_hoeffding = max(1,int(math.ceil(0.5 * math.exp(2 * (args.h - args.O_size) * math.log(Delta-1) - 2 * math.log(s)) * math.log(2/args.p))))
     if N_hoeffding <  n:
         n_practical += 1
     n_total += 1
