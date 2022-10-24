@@ -1,6 +1,6 @@
 ## Introduction
 
-This repository contains experiments from our paper *A note on estimating global subgraph counts by sampling*.
+This repository contains experiments from our paper S. Janson and V. Kurauskas, *A note on estimating global subgraph counts by sampling* ([arXiv preprint](https://arxiv.org/pdf/2210.11336.pdf)).
 
 The included script calculates the minimum sample size $N$ as in our Corollary 5 with $\epsilon=0.1$ and $p=0.05$ (and also one result for Theorem 6), see the script `run_all`.
 
