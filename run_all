@@ -10,8 +10,7 @@ python3 estimate_N.py --h=5 --min_n=10000 `ls ./SFAnalysis/degreesequences/*.txt
 #Save degree information from 
 #D. M. Feehan and A. S. Mahmud, Quantifying population contact patterns in the United States during the COVID-19 pandemic, Nature Communications 12 (2021), 1–9. 
 git clone https://github.com/dfeehan/bics-paper-release.git
-cd ./bics-paper-release/bics-paper-code/code/
-R -e "install.packages('piggyback', 'data.table')"
+R -e "install.packages(c('piggyback', 'data.table'))"
 #we actually only need the download part to work
 Rscript bics-paper-release/bics-paper-code/code/00-run-all.R || true
 #"adjusted" versions are the distributions adjusted for USA population by Feehan and Mahmud
@@ -28,3 +27,4 @@ python3 estimate_N.py --h=5 --i_T=3 --n=330000000 COVID19-Wave*[1-3]*.csv > resu
 #if we were able to sample a random edge (Theorem 6, |V(O)|=2)
 python3 estimate_N.py --h=3 --n=330000000 --O_size=2 COVID19-Wave*[1-3]*.csv > results/feehan_mahmud_3_O_2.txt
 
+echo "Done!"
